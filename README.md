@@ -36,3 +36,5 @@ Default client endpoint is http://localhost:3000 , username: **admin** , passwor
 Windows 10 (1909)
 5.10.13-arch1-2
 ```
+
+PS: spring application can be further abstracted by AbstractService<T>, AbstractController<T> and etc. 
