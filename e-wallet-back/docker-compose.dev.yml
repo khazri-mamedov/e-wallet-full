@@ -1,0 +1,15 @@
+version: '3.3'
+
+services:
+  server:
+    build:
+      context: .
+    environment:
+      - JWT_SECRET='somesecret'
+      - JWT_EXPR=15
+      - SERVER_PORT=9090
+    container_name: e-wallet-server
+    volumes:
+      - ./m2:/root/.m2
+    ports:
+      - 9090:9090
