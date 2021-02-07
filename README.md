@@ -15,11 +15,11 @@ docker-compose -f docker-compose.dev.yml up
 cd e-wallet-back
 mvn spring-boot:run
 ```
-Server port and other configs are in env vars. Check docker-compose file
+Server port and other configs are in env vars. Check docker-compose file. **project-lombok** isn't used for clarity reasons
 
 Endpoints:
 - h2-console: http://localhost:9090/h2-console (jdbc url: jdbc:h2:mem:ewallet;LOCK_TIMEOUT=10000)
-- swagger: http://localhost:9090/swagger-ui/index.html
+- swagger: http://localhost:9090/swagger-ui/index.html (add 'Bearer valid_token' to **authorize**)
 
 ### Running client
 
