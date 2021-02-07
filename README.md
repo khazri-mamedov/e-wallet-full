@@ -1,5 +1,5 @@
 # e-wallet-full
-Simple E-Wallet application with front and back end side
+Simple E-Wallet application with front and back end side (Spring Boot + React)
 
 ### Running server with docker
 
@@ -30,7 +30,7 @@ npm start
 ```
 Default client endpoint is http://localhost:3000
 
-### Testted on:
+### Tested on:
 
 ```sh
 Windows 10 (1909)
