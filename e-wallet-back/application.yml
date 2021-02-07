@@ -1,6 +1,5 @@
 server:
-#  port: ${SERVER_PORT}
-  port: 9090
+  port: ${SERVER_PORT}
 spring:
   datasource:
     url: jdbc:h2:mem:ewallet;LOCK_TIMEOUT=10000
@@ -15,7 +14,5 @@ spring:
     console:
       enabled: true
 jwt:
-#  secret: ${JWT_SECRET}
-  secret: somesecret
-#  expiration-minutes: ${JWT_EXPR}
-  expiration-minutes: 15
+  secret: ${JWT_SECRET}
+  expiration-minutes: ${JWT_EXPR}

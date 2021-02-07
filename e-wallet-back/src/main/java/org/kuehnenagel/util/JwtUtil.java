@@ -3,6 +3,8 @@ package org.kuehnenagel.util;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -16,6 +18,8 @@ import java.util.function.Function;
  */
 @Component
 public class JwtUtil {
+    private final Logger logger = LoggerFactory.getLogger(getClass());
+    
     @Value("${jwt.secret}")
     private String secret;
     
@@ -51,12 +55,14 @@ public class JwtUtil {
      */
     private String createToken(final Map<String, Object> claims, String subject) {
         long currentMillis = System.currentTimeMillis();
+        long expiresAt = currentMillis + expirationMinutes * 60_000;
+        logger.info("Token expiration millis: {}", expiresAt);
         
         return Jwts.builder()
                 .setClaims(claims)
                 .setSubject(subject)
                 .setIssuedAt(new Date(currentMillis))
-                .setExpiration(new Date(currentMillis + expirationMinutes * 60_000))
+                .setExpiration(new Date(expiresAt))
                 .signWith(SignatureAlgorithm.HS256, secret)
                 .compact();
     }
