@@ -9,7 +9,7 @@ docker-compose -f docker-compose.dev.yml up
 ```
 (-d in detached mode)
 
-**(Optinal)** without docker
+**(Optinal)** without docker. **Check env vars** from docker-compose before running with the below command
 
 ```sh
 cd e-wallet-back
