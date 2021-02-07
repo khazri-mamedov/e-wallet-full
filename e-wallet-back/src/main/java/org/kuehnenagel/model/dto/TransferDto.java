@@ -1,6 +1,8 @@
 package org.kuehnenagel.model.dto;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.hibernate.validator.constraints.Range;
+import org.kuehnenagel.util.BalanceSerializer;
 
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotNull;
@@ -18,6 +20,7 @@ public class TransferDto {
     
     @NotNull(message = "Amount can't be null")
     @DecimalMin(value = "0.1", message = "Min amount for transfer is 0.1")
+    @JsonSerialize(using = BalanceSerializer.class)
     private BigDecimal amount;
     
     public Integer getFromWalletId() {

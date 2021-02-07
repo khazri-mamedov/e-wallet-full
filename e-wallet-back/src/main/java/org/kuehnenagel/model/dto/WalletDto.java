@@ -1,5 +1,8 @@
 package org.kuehnenagel.model.dto;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import org.kuehnenagel.util.BalanceSerializer;
+
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -15,6 +18,7 @@ public class WalletDto {
     
     @NotNull(message = "Balance is null")
     @DecimalMin(value = "0.0", message = "Balance is negative!")
+    @JsonSerialize(using = BalanceSerializer.class)
     private BigDecimal balance;
     
     public String getName() {
