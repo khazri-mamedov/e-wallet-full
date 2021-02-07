@@ -29,6 +29,7 @@ npm install
 npm start
 ```
 Default client endpoint is http://localhost:3000
+Default username: **admin** , password: **admin**
 
 ### Tested on:
 
