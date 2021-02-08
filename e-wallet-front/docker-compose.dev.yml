@@ -1,0 +1,11 @@
+version: '3.3'
+
+services:
+  client-webpack:
+    build:
+      context: .
+    container_name: e-wallet-front
+    volumes:
+      - ./container-node_modules:/root/node_modules
+    ports:
+      - 3000:3000

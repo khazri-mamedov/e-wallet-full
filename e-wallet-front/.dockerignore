@@ -1,4 +1,2 @@
-.idea
-*.iml
-target
 container-node_modules/
+node_modules/
